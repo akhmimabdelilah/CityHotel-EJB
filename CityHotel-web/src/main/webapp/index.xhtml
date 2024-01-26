@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="jakarta.faces.core">
+    <h:head>
+        <title>Facelet Title</title>
+        <h:outputStylesheet library="webjars" name="primeflex/3.3.1/primeflex.min.css" />
+    </h:head>
+    <h:body>
+        <div class="card" style="margin-bottom: 20px;">
+            <h:form>
+                <p:growl id="messages"/>
+
+                <p:menubar>
+                    <f:facet name="options" >
+                        <div class="flex flex-row align-items-center justify-content-start">
+                            <p:graphicImage srcset="assets/img.svg" height="50px" width="50px" />
+                        </div>
+                    </f:facet>
+                    <p:menuitem value="Home" icon="pi pi-fw pi-home" outcome="index.xhtml" />
+                    <p:menuitem value="Cities" icon="pi pi-fw pi-map-marker" outcome="/web/ville.xhtml" />
+                    <p:menuitem value="Hotels" icon="pi pi-fw pi-calendar" outcome="/web/hotel.xhtml"/>
+
+                </p:menubar>
+            </h:form>
+        </div>
+
+
+        <p:panel header="Statistiques" style="margin: 10px;">
+            <p:barChart model="#{hotelJSFBean.barModel}" style="width: 100%; height: 500px;"/>
+        </p:panel>
+
+        <p:panel style="margin-top:10px;" footer="Crud app using jakarta 10 - hibernate - jsf - primefaces v13">
+            <h:outputText value="© 2023 By A00N" />
+        </p:panel>
+    </h:body>
+</html>
